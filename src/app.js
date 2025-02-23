@@ -3,8 +3,13 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 const app = express();
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://boisterous-bienenstitch-d1cdda.netlify.app", // Netlify frontend
+  ];
 const corsOptions = {
-    origin: 'http://localhost:5173', 
+    origin: allowedOrigins, 
+
     credentials: true, 
 }
 app.use(cors(corsOptions));
